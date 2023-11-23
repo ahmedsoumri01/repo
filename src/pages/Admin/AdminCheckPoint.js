@@ -88,71 +88,69 @@ const AdminCheckPoint = () => {
   }
 
   return (
-    <div className="container mx-auto my-8">
-      <h1 className="text-3xl font-semibold mb-4">Pointages</h1>
-      {/* Button to return to admin dashboard */}
-      <Link to={'/admin/dashboard'} className="mb-4 p-2 bg-green-500 text-white " >
-        Return to Admin Dashboard
-      </Link>
-
-      {/* Filter input */}
-      <div className="flex items-center mt-7">
-      
-        <input
-          id="dateFilter"
-          type="date"
-          className="p-3 border border-gray-300 rounded"
-        />
-          <button
-          onClick={() => handleFilter(document.getElementById('dateFilter').value)}
-          className="p-2 bg-blue-500 text-white ml-4"
-        >
-          Filter
-        </button>
-      </div>
-
-      {/* Map display */}
-      {selectedPoint && (
-        <MapToggleBox
-          latitude={selectedPoint.latitude}
-          longitude={selectedPoint.longitude}
-          onClose={() => handleToggleMap(null)}
-        />
-      )}
-
-      {/* Table display */}
-      <table className="min-w-full border border-collapse border-gray-800 mt-4">
-        <thead>
-          <tr>
-            <th className="border p-2">ID</th>
-            <th className="border p-2">User ID</th>
-            <th className="border p-2">Latitude</th>
-            <th className="border p-2">Longitude</th>
-            <th className="border p-2">Pointed Date</th>
-            <th className="border p-2">Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {filteredPointages.map((pointage) => (
-            <tr key={pointage.id}>
-              <td className="border p-2">{pointage.id}</td>
-              <td className="border p-2">{pointage.user.id}</td>
-              <td className="border p-2">{pointage.latitude}</td>
-              <td className="border p-2">{pointage.longitude}</td>
-              <td className="border p-2">{pointage.pointedDate}</td>
-              <td className="border p-2">
-                <button
-                  onClick={() => handleToggleMap(pointage)}
-                  className="ml-2 p-1 bg-blue-500 text-white"
-                >
-                  Show Map
-                </button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+    <div className="container mx-auto my-8 text-center">
+    <h1 className="text-3xl font-semibold mb-4">Pointages</h1>
+  
+    {/* Button to return to admin dashboard */}
+    
+    {/* Filter input */}
+    <div className="flex items-center mt-7">
+      <input
+        id="dateFilter"
+        type="date"
+        className="p-3 border border-gray-300 rounded"
+      />
+      <button
+        onClick={() => handleFilter(document.getElementById('dateFilter').value)}
+        className="p-2 bg-blue-500 text-white ml-4"
+      >
+        Filter
+      </button>
     </div>
+  
+    {/* Map display */}
+    {selectedPoint && (
+      <MapToggleBox
+        latitude={selectedPoint.latitude}
+        longitude={selectedPoint.longitude}
+        onClose={() => handleToggleMap(null)}
+      />
+    )}
+  
+    {/* Table display */}
+    <table className="min-w-full border border-collapse border-gray-800 mt-4">
+      <thead>
+        <tr>
+          <th className="border p-2">ID</th>
+          <th className="border p-2">User ID</th>
+          <th className="border p-2">Latitude</th>
+          <th className="border p-2">Longitude</th>
+          <th className="border p-2">Pointed Date</th>
+          <th className="border p-2">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {filteredPointages.map((pointage) => (
+          <tr key={pointage.id}>
+            <td className="border p-2">{pointage.id}</td>
+            <td className="border p-2">{pointage.user.id}</td>
+            <td className="border p-2">{pointage.latitude}</td>
+            <td className="border p-2">{pointage.longitude}</td>
+            <td className="border p-2">{pointage.pointedDate}</td>
+            <td className="border p-2">
+              <button
+                onClick={() => handleToggleMap(pointage)}
+                className="ml-2 p-1 bg-blue-500 text-white"
+              >
+                Show Map
+              </button>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+  
   );
 };
 

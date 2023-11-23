@@ -131,11 +131,7 @@ const PointYourDay = () => {
           >
             Point Your Day
           </button>
-          <Link to="/user/dashboard">
-            <button className="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded ml-4 focus:outline-none focus:shadow-outline">
-              Return to Dashboard
-            </button>
-          </Link>
+      
         </div>
       </form>
     </div>

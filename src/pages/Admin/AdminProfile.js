@@ -47,9 +47,7 @@ const AdminProfile = () => {
   return (
     <div className="container mx-auto my-8">
       <h1 className="text-3xl font-semibold mb-4">Admin Profile</h1>
-      <Link to="/admin/dashboard" className="bg-blue-500 text-white px-4 py-2 rounded mt-4 mb-4">
-        Go back to Admin Dashboard
-      </Link>
+ 
 
       {user ? (
         <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">

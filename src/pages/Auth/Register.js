@@ -133,7 +133,7 @@ export default function Register() {
           >
             Register
           </button>
-          <Link to="/auth/login" className="text-blue-500 cursor-pointer">
+          <Link to="/" className="text-blue-500 cursor-pointer">
             Go back to Login
           </Link>
         </div>

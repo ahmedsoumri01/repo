@@ -72,48 +72,44 @@ const AllUsers = () => {
   }
 
   return (
-    <div className="container mx-auto my-8">
-      <div className="mb-4">
-        <Link to="/admin/dashboard">
-          <button className="bg-green-500 text-white px-4 py-2 rounded">Return to Dashboard</button>
-        </Link>
-      </div>
-
-      <h1 className="text-3xl font-semibold mb-4">All Users</h1>
-
-      <table className="min-w-full border border-collapse border-gray-800">
-        <thead>
-          <tr>
-            <th className="border p-2">ID</th>
-            <th className="border p-2">Username</th>
-            <th className="border p-2">Email</th>
-            <th className="border p-2">Role</th>
-            <th className="border p-2">Actions</th>
+    <div className="container mx-auto my-8 text-center">
+    <h1 className="text-3xl font-semibold mb-4">All Users</h1>
+  
+    <table className="mx-auto min-w-full border border-collapse border-gray-800">
+      <thead>
+        <tr>
+          <th className="border p-2">ID</th>
+          <th className="border p-2">Username</th>
+          <th className="border p-2">Email</th>
+          <th className="border p-2">Role</th>
+          <th className="border p-2">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {users.map((user) => (
+          <tr key={user.id}>
+            <td className="border p-2">{user.id}</td>
+            <td className="border p-2">{user.username}</td>
+            <td className="border p-2">{user.email}</td>
+            <td className="border p-2">{user.role}</td>
+            <td className="border p-2">
+              <button
+                onClick={() => handleDelete(user.id)}
+                className="bg-red-500 text-white px-4 py-2 rounded mr-2"
+              >
+                Delete
+              </button>
+              <Link to={`/admin/edit-user/${user.id}`}>
+                <button className="bg-orange-500 text-white px-4 py-2 rounded">Edit</button>
+              </Link>
+            </td>
           </tr>
-        </thead>
-        <tbody>
-          {users.map((user) => (
-            <tr key={user.id}>
-              <td className="border p-2">{user.id}</td>
-              <td className="border p-2">{user.username}</td>
-              <td className="border p-2">{user.email}</td>
-              <td className="border p-2">{user.role}</td>
-              <td className="border p-2">
-                <button
-                  onClick={() => handleDelete(user.id)}
-                  className="bg-red-500 text-white px-4 py-2 rounded mr-2"
-                >
-                  Delete
-                </button>
-                <Link to={`/admin/edit-user/${user.id}`}>
-                  <button className="bg-orange-500 text-white px-4 py-2 rounded">Edit</button>
-                </Link>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+        ))}
+      </tbody>
+    </table>
+  </div>
+  
+  
   );
 };
 

@@ -1,6 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
+
 import AdminDashboard from "./pages/Admin/AdminDashboard";
 import UserProfile from "./pages/User/UserProfile";
 import AllUsers from "./pages/Admin/AllUsers";
@@ -16,7 +16,6 @@ function App() {
   return (
    
     <Routes>
-      <Route path="/" element={<Home />} />
       {/* admin routes */}
       <Route path="/admin/dashboard" element={<AdminDashboard />} />
       <Route path="/admin/profile" element={<AdminProfile />} />
@@ -31,7 +30,7 @@ function App() {
       
       {/* auth routes */}
       <Route path="/auth/register" element={<Register />} />
-      <Route path="/auth/login" element={<Login />} />
+      <Route path="/" element={<Login />} />
       <Route path="/auth/forget-password" element={<ForgetPass />} />
       
       </Routes>
