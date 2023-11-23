@@ -75,66 +75,63 @@ const PointYourDay = () => {
   };
 
   return (
-    <div className="container mx-auto my-8">
-      <h1 className="text-3xl font-semibold mb-4">Point Your Day</h1>
+    <div className="container mx-auto my-8 text-center">
+    <h1 className="text-4xl font-semibold mb-4">Point Your Day</h1>
 
+    <div className="mb-4">
+      <p className="text-gray-700 text-lg font-bold mb-2">Current Date: {currentDate}</p>
+    </div>
+
+    <form className="space-y-4">
       <div className="mb-4">
-        <p className="text-gray-700 text-sm font-bold mb-2">
-          Current Date: {currentDate}
-        </p>
+        <label htmlFor="latitude" className="block text-gray-700 text-sm font-bold mb-2">
+          Latitude
+        </label>
+        <input
+          type="text"
+          id="latitude"
+          name="latitude"
+          value={latitude}
+          onChange={(e) => setLatitude(e.target.value)}
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        />
       </div>
 
-      <form>
-        <div className="mb-4">
-          <label htmlFor="latitude" className="block text-gray-700 text-sm font-bold mb-2">
-            Latitude
-          </label>
-          <input
-            type="text"
-            id="latitude"
-            name="latitude"
-            value={latitude}
-            onChange={(e) => setLatitude(e.target.value)}
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          />
-        </div>
+      <div className="mb-4">
+        <label htmlFor="longitude" className="block text-gray-700 text-sm font-bold mb-2">
+          Longitude
+        </label>
+        <input
+          type="text"
+          id="longitude"
+          name="longitude"
+          value={longitude}
+          onChange={(e) => setLongitude(e.target.value)}
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        />
+      </div>
 
-        <div className="mb-4">
-          <label htmlFor="longitude" className="block text-gray-700 text-sm font-bold mb-2">
-            Longitude
-          </label>
-          <input
-            type="text"
-            id="longitude"
-            name="longitude"
-            value={longitude}
-            onChange={(e) => setLongitude(e.target.value)}
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          />
-        </div>
+      <div className="mb-4 flex justify-center">
+        <button
+          type="button"
+          onClick={handleGetLocation}
+          className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+        >
+          Get Location
+        </button>
+      </div>
 
-        <div className="mb-4">
-          <button
-            type="button"
-            onClick={handleGetLocation}
-            className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-          >
-            Get Location
-          </button>
-        </div>
-
-        <div className="flex items-center">
-          <button
-            type="button"
-            onClick={handlePointYourDay}
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-          >
-            Point Your Day
-          </button>
-      
-        </div>
-      </form>
-    </div>
+      <div className="flex justify-center">
+        <button
+          type="button"
+          onClick={handlePointYourDay}
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+        >
+          Point Your Day
+        </button>
+      </div>
+    </form>
+  </div>
   );
 };
 

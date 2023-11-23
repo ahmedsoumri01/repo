@@ -75,8 +75,8 @@ const AllUsers = () => {
     <div className="container mx-auto my-8 text-center">
     <h1 className="text-3xl font-semibold mb-4">All Users</h1>
   
-    <table className="mx-auto min-w-full border border-collapse border-gray-800">
-      <thead>
+    <table className="w-full text-sm rtl:text-right text-black dark:text-blue-100 bg-white">
+      <thead className="text-xs text-white uppercase bg-gray-800 border-b border-gray-600 dark:text-white">
         <tr>
           <th className="border p-2">ID</th>
           <th className="border p-2">Username</th>
@@ -86,8 +86,8 @@ const AllUsers = () => {
         </tr>
       </thead>
       <tbody>
-        {users.map((user) => (
-          <tr key={user.id}>
+        {users.map((user, index) => (
+          <tr key={user.id} className={index % 2 === 0 ? 'bg-gray-100' : 'bg-gray-200'}>
             <td className="border p-2">{user.id}</td>
             <td className="border p-2">{user.username}</td>
             <td className="border p-2">{user.email}</td>
@@ -108,6 +108,7 @@ const AllUsers = () => {
       </tbody>
     </table>
   </div>
+  
   
   
   );

@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import login from '../assets/login.json';
+import Lottie from 'lottie-react';
+
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -55,6 +58,9 @@ export default function Login() {
 
   return (
     <div className="flex items-center justify-center h-screen">
+      <div className="flex justify-center items-center h-full">
+        <Lottie animationData={login}/>
+      </div>
       <div className="bg-white p-8 rounded shadow-md max-w-md w-full">
         <h1 className="text-3xl font-bold mb-4">Login</h1>
         <input

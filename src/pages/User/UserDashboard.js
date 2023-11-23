@@ -148,7 +148,7 @@ useEffect(() => {
       {(() => {
         switch (interfaceSelected) {
           case 0:
-            return null;
+            return    <UserProfile />;
             case 1:
             return <PointYourDay />;
     
@@ -156,6 +156,7 @@ useEffect(() => {
             return null;
         }
       })()}
+   
     </div>
   </div>
   );

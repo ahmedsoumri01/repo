@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import animation from '../assets/animation.json';
+import Lottie from 'lottie-react';
 
 export default function Register() {
   const [username, setUsername] = useState('');
@@ -53,7 +55,11 @@ export default function Register() {
 
   return (
     <div className="flex items-center justify-center h-screen">
+       <div className="flex justify-center items-center h-full" style={{maxWidth:"50%"}}>
+        <Lottie animationData={animation}/>
+      </div>
       <div className="bg-white p-8 rounded shadow-md max-w-md w-full">
+        
         <h1 className="text-3xl font-bold mb-4">Register</h1>
         <input
           className="mb-4 p-2 border border-gray-300 rounded w-full shadow-md"

@@ -1,10 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import motPass from '../assets/motPass.json';
+import Lottie from 'lottie-react';
 const ForgetPass = () => {
   return (
-    <div className="container mx-auto my-8">
+    <div className="flex items-center justify-center h-screen">
+      
       <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+        
         <h1 className="text-3xl font-semibold mb-4">Forget Password</h1>
         <div className="mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2">Email:</label>
@@ -19,10 +22,17 @@ const ForgetPass = () => {
         >
           Reset Password
         </button>
-        <Link to="/auth/login" className="text-blue-500 hover:underline">
+        <Link to="/" className="text-blue-500 hover:underline">
           Return to Login
         </Link>
       </div>
+      
+    <div className="flex justify-center items-center h-full">
+      <div className="flex items-center justify-center">
+        <Lottie animationData={motPass}/>
+      </div>
+    </div>
+  
     </div>
   );
 };

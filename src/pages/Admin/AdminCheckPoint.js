@@ -94,19 +94,19 @@ const AdminCheckPoint = () => {
     {/* Button to return to admin dashboard */}
     
     {/* Filter input */}
-    <div className="flex items-center mt-7">
-      <input
-        id="dateFilter"
-        type="date"
-        className="p-3 border border-gray-300 rounded"
-      />
-      <button
-        onClick={() => handleFilter(document.getElementById('dateFilter').value)}
-        className="p-2 bg-blue-500 text-white ml-4"
-      >
-        Filter
-      </button>
-    </div>
+    <div className="flex items-center justify-center mt-7">
+  <input
+    id="dateFilter"
+    type="date"
+    className="p-3 border border-gray-300 rounded w-80"
+  />
+  <button
+    onClick={() => handleFilter(document.getElementById('dateFilter').value)}
+    className="p-2 bg-blue-500 text-white ml-4 w-20"
+  >
+    Filter
+  </button>
+</div>
   
     {/* Map display */}
     {selectedPoint && (
@@ -118,8 +118,8 @@ const AdminCheckPoint = () => {
     )}
   
     {/* Table display */}
-    <table className="min-w-full border border-collapse border-gray-800 mt-4">
-      <thead>
+    <table className="w-full text-sm rtl:text-right text-black dark:text-blue-100 bg-white mt-5">
+      <thead className="text-xs text-white uppercase bg-gray-800 border-b border-gray-600 dark:text-white">
         <tr>
           <th className="border p-2">ID</th>
           <th className="border p-2">User ID</th>
